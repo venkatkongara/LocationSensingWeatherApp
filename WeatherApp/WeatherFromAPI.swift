@@ -10,10 +10,10 @@ import Foundation
 
 class WeatherFromAPI: NSObject {
 
-    func getWeekForecast (lattitude: String,longitude: String) -> [String] {
+    func getWeekForecast (lattitude: String,longitude: String) -> ([String],String) {
         let data = NSData(contentsOfURL: NSURL(string: apiURL + lattitude + "," + longitude)!)
         let json = parseJSON(data!)
-        return apparentHighTempForWeek(json!)
+        return (apparentHighTempForWeek(json!),getCityName(json!))
     }
     
     private func parseJSON(inputData: NSData) -> NSDictionary? {
@@ -35,6 +35,10 @@ class WeatherFromAPI: NSObject {
             }
         }
         return apparentHighTempForWeekArray
+    }
+    
+    private func getCityName(json: NSDictionary) -> String {
+        return (json.objectForKey("timezone") as? String)!
     }
     
 }

@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var longitude = ""
     let locationManger = CLLocationManager()
     var forecastData = [String]()
+    var city = ""
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
         locationManger.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManger.requestAlwaysAuthorization()
         locationManger.startUpdatingLocation()
+        tableView.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,8 +48,10 @@ extension ViewController: CLLocationManagerDelegate {
         let location = locations.last
         lattitude = "\(location!.coordinate.latitude)"
         longitude = "\(location!.coordinate.longitude)"
-        forecastData = WeatherFromAPI().getWeekForecast(lattitude, longitude: longitude)
+        forecastData = WeatherFromAPI().getWeekForecast(lattitude, longitude: longitude).0
+        city = WeatherFromAPI().getWeekForecast(lattitude, longitude: longitude).1
         tableView.reloadData()
+        tableView.alpha = 1
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -87,7 +91,9 @@ extension ViewController: UITableViewDataSource {
             dayComponent.day = indexPath.row - 1;
             let theCalendar = NSCalendar.currentCalendar()
             let nextDate = theCalendar.dateByAddingComponents(dayComponent, toDate: NSDate(), options: .MatchStrictly)
-            tableViewCell?.city.text = "\(nextDate!)"
+            let dateString = "\(nextDate!)"
+            let range = dateString.startIndex..<dateString.startIndex.advancedBy(11)
+            tableViewCell?.city.text = city + " " + dateString[range]
             tableViewCell?.temperatureHigh.text = forecastData[indexPath.row]
         }
         return tableViewCell!

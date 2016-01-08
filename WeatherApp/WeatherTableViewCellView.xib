@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,16 +15,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-bE-wdU">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-bE-wdU">
                         <rect key="frame" x="8" y="11" width="237" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-1H-Pm0">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-1H-Pm0">
                         <rect key="frame" x="253" y="11" width="59" height="21"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="toZ-wV-O7X"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -31,6 +35,21 @@
                 </subviews>
                 <animations/>
                 <color key="backgroundColor" red="0.52549019610000003" green="0.78039215689999997" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="0zZ-1H-Pm0" firstAttribute="top" secondItem="dBZ-HQ-61X" secondAttribute="topMargin" id="1Hm-q1-0g7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0zZ-1H-Pm0" secondAttribute="bottom" id="7EP-p8-Hdh"/>
+                    <constraint firstItem="gkz-bE-wdU" firstAttribute="leading" secondItem="dBZ-HQ-61X" secondAttribute="leadingMargin" id="96O-Lv-uzM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gkz-bE-wdU" secondAttribute="bottom" id="EQT-7a-Vxg"/>
+                    <constraint firstItem="0zZ-1H-Pm0" firstAttribute="leading" secondItem="gkz-bE-wdU" secondAttribute="trailing" constant="20" id="LPq-Wf-UT3"/>
+                    <constraint firstItem="0zZ-1H-Pm0" firstAttribute="trailing" secondItem="dBZ-HQ-61X" secondAttribute="trailingMargin" id="Ocl-Kg-VxM"/>
+                    <constraint firstItem="0zZ-1H-Pm0" firstAttribute="leading" secondItem="gkz-bE-wdU" secondAttribute="trailing" constant="8" id="blv-lt-eJY"/>
+                    <constraint firstItem="gkz-bE-wdU" firstAttribute="top" secondItem="dBZ-HQ-61X" secondAttribute="topMargin" id="clI-IW-zJK"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="blv-lt-eJY"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <connections>
