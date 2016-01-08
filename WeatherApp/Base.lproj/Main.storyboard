@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WWP-9j-Xl1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Syg-ce-gpj">
+            <objects>
+                <viewController id="WWP-9j-Xl1" customClass="ViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UM7-RR-qgy"/>
+                        <viewControllerLayoutGuide type="bottom" id="VPW-bZ-kph"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lrc-dR-TWa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CH9-0K-jj4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WWP-9j-Xl1" id="Izt-12-1UV"/>
+                                    <outlet property="delegate" destination="WWP-9j-Xl1" id="cjy-Pb-oAz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CH9-0K-jj4" firstAttribute="leading" secondItem="lrc-dR-TWa" secondAttribute="leading" id="eNm-H7-XrQ"/>
+                            <constraint firstItem="CH9-0K-jj4" firstAttribute="top" secondItem="lrc-dR-TWa" secondAttribute="top" id="f6z-dy-ywq"/>
+                            <constraint firstAttribute="trailing" secondItem="CH9-0K-jj4" secondAttribute="trailing" id="fyi-uI-7Wi"/>
+                            <constraint firstAttribute="bottom" secondItem="CH9-0K-jj4" secondAttribute="bottom" id="qii-mL-83T"/>
+                            <constraint firstItem="CH9-0K-jj4" firstAttribute="top" secondItem="lrc-dR-TWa" secondAttribute="topMargin" id="yYg-Z1-M1K"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="f6z-dy-ywq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="CH9-0K-jj4" id="Diu-6s-ePz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="INY-Z8-Qp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="592" y="100"/>
+        </scene>
+    </scenes>
+</document>
