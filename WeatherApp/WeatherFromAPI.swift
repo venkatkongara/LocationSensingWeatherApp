@@ -21,7 +21,7 @@ class WeatherFromAPI: NSObject {
         do {
             JsonDictionary = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
         } catch let error as NSError {
-            print("JSON Parsinging error: \(error.localizedDescription)")
+            print("JSON Parsing error: \(error.localizedDescription)")
         }
         return JsonDictionary
     }

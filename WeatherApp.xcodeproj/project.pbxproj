@@ -17,6 +17,7 @@
 		473B0E731C3F402B00DAF121 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473B0E721C3F402B00DAF121 /* CoreLocation.framework */; };
 		473B0E761C3F6B6700DAF121 /* WeatherTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 473B0E751C3F6B6700DAF121 /* WeatherTableViewCellView.xib */; };
 		473B0E781C3F6CE500DAF121 /* WeatherViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473B0E771C3F6CE500DAF121 /* WeatherViewTableViewCell.swift */; };
+		CE7B099E1C98E44000021CC2 /* Read.Me in Resources */ = {isa = PBXBuildFile; fileRef = CE7B099D1C98E44000021CC2 /* Read.Me */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		473B0E721C3F402B00DAF121 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		473B0E751C3F6B6700DAF121 /* WeatherTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherTableViewCellView.xib; sourceTree = "<group>"; };
 		473B0E771C3F6CE500DAF121 /* WeatherViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewTableViewCell.swift; sourceTree = "<group>"; };
+		CE7B099D1C98E44000021CC2 /* Read.Me */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Read.Me; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		473B0E5A1C3F3DEE00DAF121 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE7B099D1C98E44000021CC2 /* Read.Me */,
 				473B0E5B1C3F3DEE00DAF121 /* AppDelegate.swift */,
 				473B0E791C3F75A700DAF121 /* UI */,
 				473B0E5D1C3F3DEE00DAF121 /* ViewController.swift */,
@@ -129,6 +132,11 @@
 					473B0E571C3F3DED00DAF121 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = E6YJVG8S38;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -159,6 +167,7 @@
 				473B0E691C3F3DEE00DAF121 /* LaunchScreen.storyboard in Resources */,
 				473B0E661C3F3DEE00DAF121 /* Assets.xcassets in Resources */,
 				473B0E611C3F3DEE00DAF121 /* Main.storyboard in Resources */,
+				CE7B099E1C98E44000021CC2 /* Read.Me in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
